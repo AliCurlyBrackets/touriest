@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     public function index(){
-        return view('Auth.login');
+        if(!Auth::check()){
+            return view('Auth.login');
+        }
+        return redirect()->route('dashboard.index');
     }
 
     public function login(Request $request){
@@ -20,10 +24,10 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($Credentional)){
-            return "Login Succeffuly";
+            return redirect()->route('dashboard.index');
         }
 
-        return "Login Failed";
+        return redirect()->route('login.index')->with('error_login' , 'Login Failed');
 
     }
 }

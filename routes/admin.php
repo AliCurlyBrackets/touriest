@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin_Dashboard\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/dashboard' , function(){
-    return view('Admin_Dashboard.index');
+
+
+Route::controller(AdminController::class)->middleware('auth')->group(function(){
+    Route::get('/dashboard' , 'index')->name('dashboard.index');
+    Route::get('/logout' , 'Logout')->name('dashboard.logout');
 });

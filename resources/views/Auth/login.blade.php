@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login | Travel Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -449,6 +450,12 @@
     <div class="form-title">Sign In</div>
     <div class="form-sub">Enter your details to access your account</div>
   </div>
+
+  @if( session('error_login') )
+    <div class="alert alert-danger">
+        {{ session('error_login') }}
+    </div>
+  @endif
 
  <form action="{{ route('login.login') }}" method="POST">
     @csrf

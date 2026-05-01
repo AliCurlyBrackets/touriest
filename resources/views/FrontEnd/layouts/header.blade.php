@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('FrontEnd/images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/css/fonts.css') }}">
